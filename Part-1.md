@@ -9,7 +9,6 @@ In this session, we'll cover the following concepts:
 - Nullable Types (!! operator, elvis operator, safe calls).
 - If/else and expression if.
 - When Blocks
-- String Templating
 
 If you need help at any point, then raise your hand or ask a mentor - they'll be more than happy to help!
 
@@ -200,7 +199,9 @@ val capsString1: String = (nullableString!!).capitalize() // brackets are option
 val capsString2: String? = nullableString?.capitalize() // if nullableString is null, capsString becomes null.
 ```
 
-## If-Else and Expression-If
+## Other Language Constructs
+
+### If-Else and Expression-If
 If-else works similarly to Java and other C-Style languages.
 ```Kotlin
 if (true) print("isTrue") 
@@ -216,7 +217,7 @@ else "Hello Universe"
 This also allows you to use if expressions in single-expression functions (`fun f(myBool: Boolean) = if (myBool) 1 else 0`)
 If you use if-else as an expression (even if returning `Unit`) , you _must_ provide an else clause, otherwise the compiler will complain about missing control paths and the expression won't be well-formed.
 
-## Loops & Ranges
+### Loops & Ranges
 While loops are pretty much identical in Kotlin and Java/C++ so I won't be covering that. For loops however are slightly different. The Java for loop syntax no longer exists, and instead loops are iterated over _iterable_ types. An example of a basic iterable type is a `range`.
 A range is a series of values with given start, end and step values. A simple range can be defined using the `..` operator like so: `0..5` which creates a range from 0 to 5 _inclusive_. If anyone knows python's `range1 function, it's a fairly similar concept:
 ```Kotlin
@@ -246,7 +247,7 @@ val args = arrayOf("Hello", "World", "It's", "Kotlin") //Helper function to make
 for (arg in args) println(arg)
 ```
 
-## When Blocks (and why it's better than switch/case)
+### When Blocks (and why it's better than switch/case)
 A `when` block is Kotlin's equivalent to a switch/case statement, and it looks like this:
 ```Kotlin
 when (3) {
@@ -312,35 +313,4 @@ fun main(args: Array<String>) {
 fun testString(myString: String?): Boolean? {
 }
 fun testString(myString: String?): Boolean? = ...
-```
-
-## String Templating
-Lastly, something amazingly useful. Kotlin allows you to insert values directly into strings without contatenation or a function like `sprintf` from C. To do that, you use the `$` operator followed by a variable place in-place where you want the value to go:
-
-```Kotlin
-val myVal = 25
-val myString = "my value = $myVal" // "my value = 25"
-```
-
-If you want to insert the results of complicated expressions directly into strings you can do that as well, just surround the expression with a pair of brackets `{}`:
-
-```Kotlin
-val string1 = "Current system time: ${System.currentTimeMillis()}"
-val string2 = "this is ugly but possible: ${if true then 25 else 24}" // "this is ugly but possible: 25"
-```
-
-### Your Turn!
-Write a function using _string templating_ that takes a time of day in seconds (i.e. 00:10am would be 10 minutes * 60 seconds = 600) and returns a string of the form `h:m:s` where h is the hours value (0-23), and m/s are minutes and seconds (0-59). Don't worry about the number of digits.
-Use the below code to get started and ask the helpers if you have any issues.
-```Kotlin
-fun main(args: Array<String>) {
-    println(testTime(21522)) // 5:58:42
-    println(testTime(51234)) // 14:13:54
-    println(testTime(70313)) // 19:31:53
-}
-
-//Can start with either of the definions below, delete the one you don't use:
-fun testTime(timeSecs: Int): String {
-}
-fun testTime(timeSecs: Int): String = ...
 ```
