@@ -203,7 +203,7 @@ val mystr = "Hello World".also(::println) // Syntax for passing an alreay define
 
 ### Apply
 
-This is identical to ```also``` apart from one major difference. Instead of the variable you call .also() on being passed in as `it`, the block instead scopes to that paramater as `this` i.e. 
+This is identical to ```also``` apart from one major difference. Instead of the variable you call .also() on being passed in as the lambda param `it`, the block instead scopes to that paramater as `this` i.e. 
 
 ```kotlin
 val result = arrayListOf(1,2,3).apply {add(4)}
