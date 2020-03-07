@@ -76,6 +76,17 @@ A ```Pair<A,B>``` can be simply created using the ```to``` keyword, and the ```m
 val myMap = hashMapOf('a' to 1, 'b' to 2, 'c' to 3)
 ```
 
+If you look at `to` out of context you might think it as something to do with ranges. That's complely understandable, but try to think of it as an individual mapping of some value `to` some other value, for use in hashmaps. That's why it's named as such, but it can be used in other applications, for example:
+
+```kotlin
+val coordinates = listOf(0 to 0, 5 to 3, 2 to 6)
+// This creates a list representing the cartesian coordinates (0,0), (5,3), and (2,6)
+for (coord in coordinates) println("${coord.first} ${coord.second}")}
+// 0 0
+// 5 3
+// 2 6
+```
+
 Collections have a lot of advanced usage, but we can't go into that without talking about:
 
 ## Lambdas and Anonymous Functions
