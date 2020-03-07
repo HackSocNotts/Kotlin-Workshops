@@ -15,7 +15,8 @@ If you need help at any point, then raise your hand or ask a mentor - they'll be
 ### If you don't have Intellij or Java installed
 - Navigate to https://play.Kotlinlang.org/
 - ...That's it!
-- You can copy the URL that it makes to save the code that you work on.
+- You can copy the URL that it makes to save the code that you work on. If you want a clean slate, just go to that URL again in a new tab!
+- This is slightly limited, in the fact that you can't read from the console, but nothing we do here will require it!
 
 ### If you'd rather use a lab PC
 - Log into one of the Lab PCs. Faster and a lot easier to set up.
@@ -113,6 +114,12 @@ myInt = myNullableInt!! // As myNullableInt is null, this statment would throw a
 myInt = myNullableInt ?: 10 // As myNullableInt is null, myInt has the value of 10!
 ```
 These are really good in some specific use cases, and offer much needed syntax shorthands for otherwise more verbose code! You can also use if-statements to determine if a nullable value is null, but we will get to that later.
+
+### Your Turn!
+
+Write some code that will read in user input (lets say, your name), and save it to a variable. Then, write some code that will print your name out!
+
+You can print using the `print()` or `println()` functions, much like any other lanugage!
 
 ### Sidenote - Lateinit
 If you want to initialise a variable after it's declared but without dealing with nullable types, you can use the  `lateinit` modifier, then that variable does not have to be given a value immediately. This is good for variables that for example cannot be populated in a constructor. You cannot have `lateinit val`s, so all `lateinit` variables must be `var` (mutable). 
@@ -298,7 +305,7 @@ val notEmptyOrWhitespace = when {
 ```
 
 ### Your Turn!
-Write a function using `when` that takes a string, and returns true if the length of the string (`string.length`) is divisible by two AND the length of the string + 1 is divisible by 5, or return false otherwise. However, if the string is null, then you should return null.
+Write a function using `when` that takes a string, and returns true if the length of the string (`string.length`) is divisible by two AND the length of the string + 1 is divisible by 5, or return false otherwise. However, if the string is null, then you should return null (hint, you should check this first!).
 *Hint: the modulus operator `%` and the boolean and operator `&&` work the same as in pretty much every other language.*
 Use the below code to get started and ask the helpers if you have any issues.
 ```Kotlin
