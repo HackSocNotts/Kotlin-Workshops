@@ -70,7 +70,7 @@ val myBoolArray = booleanArrayOf(true, false, true)
 ```
 
 Also, a tip for creating ```Pair```s and ```Map```s. 
-A ```Pair<A,B>``` can be simply created using the ```to``` keyword, and the ```mapOf``` functions take a list of Pairs of key to value to construct themselves:
+A ```Pair<A,B>``` can be simply created using the ```to``` keyword, and the ```mapOf``` family of functions take a list of Pairs of key to value to construct themselves:
 
 ```kotlin
 val myMap = hashMapOf('a' to 1, 'b' to 2, 'c' to 3)
@@ -153,7 +153,7 @@ var lambda: (myInt:Int) -> Boolean = {it != 5}
 
 There are so many different applications for lambdas, but usage with collections is a very major one.
 
-### Now you!
+### Your Turn!
 
 Using the code below, create a chain of function calls on the starting object that prints out all of the square numbers in the given range (1, 4, 9, 16, etc). No newlines and no semicolons (can all fit into a single chain!). Ask a helper if you're stuck.
 
@@ -223,7 +223,7 @@ println(result)
 
 How nice is that!
 
-You can use all of these together, I tend to use `apply` when I can, and `also` when I also need the `is` scope.
+You can use all of these together, I tend to use `apply` when I can, and `also` when I also need the `it` scope.
 
 ## Classes and Data Classes
 
@@ -264,6 +264,14 @@ class Customer(val name: String) { //Can be var
 }
 ```
 
+You then create an instance of a class in the standard c-style way.
+However, there is no `new` keyword, just call the constructor!
+
+```kotlin
+var cust = Customer("Daniel") // Calls primary constructor
+cust = Customer("Alexi", 53) // Calls secondary constructor
+```
+
 ### Data Classes
 These are pretty much what you'd think of as C-structs. They store POD, and define useful helper functions _for_ us.
 
@@ -275,3 +283,7 @@ This defines many functions for us:
 * `equals()`/`hashcode()` for comparisons/hashing
 * `toString()` of the form `"User(name=John, age=42)"`
 * `copy()`
+
+### Your Turn!
+
+Create a data class that represents _you_! Create an instance of that class, and then print it to the console.
