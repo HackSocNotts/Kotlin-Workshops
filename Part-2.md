@@ -16,7 +16,7 @@ In this session, we'll cover the following concepts:
 If you need help at any point, then raise your hand or ask a mentor - they'll be more than happy to help!
 
 ## String Templating
-Lastly, something amazingly useful. Kotlin allows you to insert values directly into strings without contatenation or a function like `sprintf` from C. To do that, you use the `$` operator followed by a variable place in-place where you want the value to go:
+Lastly, something amazingly useful. Kotlin allows you to insert values directly into strings without contatenation or a function like `sprintf` from C. To do that, you use the `$` operator followed by a variable name in-place where you want the value to go:
 
 ```Kotlin
 val myVal = 25

@@ -117,9 +117,9 @@ These are really good in some specific use cases, and offer much needed syntax s
 
 ### Your Turn!
 
-Write some code that will read in user input (lets say, your name), and save it to a variable. Then, write some code that will print your name out!
+Write some code that will read in user input (lets say, your name), and save it to a `val`. Then, write some code that will print your name out!
 
-You can print using the `print()` or `println()` functions, much like any other lanugage!
+You can print using the `print()` or `println()` functions, much like any other lanugage! To get input (`stdin`), you use `readLine()`. As this functions can _fail_, it actually returns a `string?` object (and in fact, will do if you're using the online compiler), so that's something to be aware of when getting user input in the future.
 
 ### Sidenote - Lateinit
 If you want to initialise a variable after it's declared but without dealing with nullable types, you can use the  `lateinit` modifier, then that variable does not have to be given a value immediately. This is good for variables that for example cannot be populated in a constructor. You cannot have `lateinit val`s, so all `lateinit` variables must be `var` (mutable). 
@@ -215,18 +215,19 @@ if (true) print("isTrue")
 else if (2 == 1) print("badMaths") 
 else print ("oof")
 ```
-However, in Kotlin if is _always_ an expression i.e. it always returns a value:
+However, in Kotlin if can be used as an an expression i.e. it represents/returns a value:
 ```Kotlin
 val myStringResult = if (2 == 1) "Hello World"
 else if (2 == 3) "Hello Galaxy"
 else "Hello Universe"
+
+fun myOneLineIf(myBool: Boolean) = if (myBool) 1 else 0
 ```
-This also allows you to use if expressions in single-expression functions (`fun f(myBool: Boolean) = if (myBool) 1 else 0`)
 If you use if-else as an expression (even if returning `Unit`) , you _must_ provide an else clause, otherwise the compiler will complain about missing control paths and the expression won't be well-formed.
 
 ### Loops & Ranges
 While loops are pretty much identical in Kotlin and Java/C++ so I won't be covering that. For loops however are slightly different. The Java for loop syntax no longer exists, and instead loops are iterated over _iterable_ types. An example of a basic iterable type is a `range`.
-A range is a series of values with given start, end and step values. A simple range can be defined using the `..` operator like so: `0..5` which creates a range from 0 to 5 _inclusive_. If anyone knows python's `range1 function, it's a fairly similar concept:
+A range is a series of values with given start, end and step values. A simple range can be defined using the `..` operator like so: `0..5` which creates a range from 0 to 5 _inclusive_. If anyone knows python's `range` function, it's a fairly similar concept:
 ```Kotlin
 for (i in 0..5) { print(i) } //0,1,2,3,4,5 and in java:
 //for (int i = 0; i <= 5; ++i) { print(i) }
@@ -252,6 +253,35 @@ You can also iterate over containers such as Java ArrayLists.
 ```Kotlin
 val args = arrayOf("Hello", "World", "It's", "Kotlin") //Helper function to make an Array<> of objects.
 for (arg in args) println(arg)
+```
+
+### Your Turn!
+
+Here's a fun one, using two functions (`main` and `getFizzBuzz`), ... write FizzBuzz!
+
+For those not aware, FizzBuzz is a common programming test. The test involves printing a list of numbers, but when a number is a multiple of 3, you print `fizz` instead, when it's a multiple of 5, you print `buzz`, and a multiple of 15, you print `fizzbuzz`.
+
+e.g.
+
+```
+1
+2
+fizz
+4
+buzz
+...
+14
+fizzbuzz
+16
+```
+
+Use the code below to get you started! Try to use expression-`if` if you can!
+
+```kotlin
+fun main() {
+}
+
+fun fizzBuzz(): String = 
 ```
 
 ### When Blocks (and why it's better than switch/case)

@@ -247,6 +247,6 @@ And that's it. If you run the script, you should see 20 iterations of Conway's G
 - Whatever else you can think of!
 # Most important tip of all
 - Don't be afraid if you don't know what something is!
-- This was not all-encompassing, python is a *big* language.
+- This was not all-encompassing, Kotlin is a *big* language.
 
 If you come across a piece of syntax that you don't understand, google it! The internet is an amazing resource for programmers, don't expect to memorise everything you've learned today!
